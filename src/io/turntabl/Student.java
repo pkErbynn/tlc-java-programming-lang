@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Student {
 
-    private List<Double> studentsGrades = new ArrayList<>();
+    private List<Double> studentsGrades;
 
     public Student(List<Double> studentsGrades) {
         this.studentsGrades = studentsGrades;
@@ -16,7 +16,11 @@ public class Student {
         return studentsGrades;
     }
 
+
     public static Double getAverageGrades(List<Double> studentsGrades){
+        if(studentsGrades.size() == 0){
+            return 0.0;
+        }
         double sum = 0.0;
         int count = 0;
         for (double studentGrade :
@@ -25,6 +29,7 @@ public class Student {
             sum += studentGrade;
         }
         double average = (sum/count);
+
         return average;
     }
 
