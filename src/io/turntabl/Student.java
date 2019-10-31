@@ -12,12 +12,7 @@ public class Student {
     }
 
 
-    public List<Double> getStudentsGrades() {
-        return studentsGrades;
-    }
-
-
-    public static Double getAverageGrades(List<Double> studentsGrades){
+    public double getAverageGrade(){
         if(studentsGrades.size() == 0){
             return 0.0;
         }
@@ -28,9 +23,8 @@ public class Student {
             count++;
             sum += studentGrade;
         }
-        double average = (sum/count);
 
-        return average;
+        return (sum/count);
     }
 
 }

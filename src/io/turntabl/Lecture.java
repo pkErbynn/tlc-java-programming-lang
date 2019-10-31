@@ -1,6 +1,7 @@
 package io.turntabl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Lecture {
@@ -15,13 +16,21 @@ public class Lecture {
     }
 
     public double getHighestAverageGrade(){
+        Student erbynn = new Student(Arrays.asList(1.0,2.0,3.0));
+        double result1 = erbynn.getAverageGrade();
+
+        Student pkay = new Student(Arrays.asList(4.0,5.0,6.0));
+        double result2 = pkay.getAverageGrade();
+
         Double highestAverageGrade = 0.0;
-        for (Student stu :
-                students) {
-            if(stu.getStudentsGrades() > highestAverageGrade){
-                highestAverageGrade = stu.getStudentsGrades();
-            }
+
+        if(result1 > result2){
+            highestAverageGrade = result1;
         }
+        else{
+            highestAverageGrade = result2;
+        }
+
         return highestAverageGrade;
     }
 }
