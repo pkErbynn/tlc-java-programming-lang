@@ -3,14 +3,13 @@ package io.turntabl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student implements Nameable{
 
     private List<Double> studentsGrades;
 
     public Student(List<Double> studentsGrades) {
         this.studentsGrades = studentsGrades;
     }
-
 
     public double getAverageGrade(){
         if(studentsGrades.size() == 0){
@@ -27,4 +26,8 @@ public class Student {
         return (sum/count);
     }
 
+    @Override
+    public String getName() {
+        return "John pkErbynn";
+    }
 }
