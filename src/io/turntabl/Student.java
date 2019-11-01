@@ -20,14 +20,12 @@ public class Student implements Nameable, HasLevel{
             return 0.0;
         }
         double sum = 0.0;
-        int count = 0;
         for (double studentGrade :
                 studentsGrades) {
-            count++;
             sum += studentGrade;
         }
-
-        return (sum/count);
+        double avg = sum/studentsGrades.size();
+        return avg;
     }
 
     @Override

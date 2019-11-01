@@ -24,7 +24,7 @@ public class Register {
         List<String> names = new ArrayList<>();
         for (Nameable nameable :
                 nameables) {
-            if(nameable.getLevel().equals(level)){
+            if(nameable.getLevel()==level){
                 names.add(nameable.getName());
             }
         }
