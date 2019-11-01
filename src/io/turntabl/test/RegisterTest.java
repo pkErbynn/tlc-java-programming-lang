@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RegisterTest {
 
-    @Test
-    void getRegister() {
-        Register reg = new Register();
-    }
+//    @Test
+//    void getRegister() {
+//        Register reg = new Register();
+//    }
 }
