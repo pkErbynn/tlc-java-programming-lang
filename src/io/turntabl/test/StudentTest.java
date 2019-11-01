@@ -1,5 +1,6 @@
 package io.turntabl.test;
 
+import io.turntabl.Level;
 import io.turntabl.Student;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
@@ -9,7 +10,7 @@ class StudentTest {
 
     @Test
     void getAverageGrade_whenListIsEmpty() {
-        Student erbynn = new Student(Arrays.asList());
+        Student erbynn = new Student("pk", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0));
         Double result = erbynn.getAverageGrade();
 //        Double result = myStudent.getAverageGrades(myStudent.getStudentsGrades());
         assertEquals(0.0, result);

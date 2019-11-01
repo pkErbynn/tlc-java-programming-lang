@@ -1,15 +1,19 @@
 package io.turntabl;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Student implements Nameable{
+public class Student implements Nameable, HasLevel{
 
+    private String name;
+    private Level studentLevel;
     private List<Double> studentsGrades;
 
-    public Student(List<Double> studentsGrades) {
+    public Student( String name,  Level studentLevel, List<Double> studentsGrades) {
+        this.name = name;
+        this.studentLevel = studentLevel;
         this.studentsGrades = studentsGrades;
     }
+
 
     public double getAverageGrade(){
         if(studentsGrades.size() == 0){
@@ -28,6 +32,12 @@ public class Student implements Nameable{
 
     @Override
     public String getName() {
-        return "John pkErbynn";
+        return this.name;
+    }
+
+
+    @Override
+    public Level getLevel() {
+        return this.studentLevel;
     }
 }
