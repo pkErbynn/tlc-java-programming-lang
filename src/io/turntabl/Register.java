@@ -5,9 +5,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Register {
-    private List<Nameable> nameables;
+    private List<Student> nameables;
 
-    public Register(List<Nameable> nameables) {
+    public Register(List<Student> nameables) {
         this.nameables = nameables;
     }
 
