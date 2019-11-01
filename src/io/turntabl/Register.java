@@ -25,7 +25,7 @@ public class Register {
         for (Nameable nameable :
                 nameables) {
             if(nameable.getLevel()==level){
-                names.add(nameable.getName());
+                names.add(nameable.getLevel().name());
             }
         }
         return names;
