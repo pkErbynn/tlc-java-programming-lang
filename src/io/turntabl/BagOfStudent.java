@@ -15,6 +15,6 @@ public class BagOfStudent {
     }
 
     public void clear(Student stu){
-        this.students.removeAll(students);
+        this.students.clear();
     }
 }
