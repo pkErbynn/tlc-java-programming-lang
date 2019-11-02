@@ -1,6 +1,7 @@
 package io.turntabl;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Student implements Nameable, HasLevel{
 
@@ -13,7 +14,6 @@ public class Student implements Nameable, HasLevel{
         this.studentLevel = studentLevel;
         this.studentsGrades = studentsGrades;
     }
-
 
     public double getAverageGrade(){
         if(studentsGrades.size() == 0){
@@ -38,4 +38,9 @@ public class Student implements Nameable, HasLevel{
     public Level getLevel() {
         return this.studentLevel;
     }
+
+//    public double getGrades(){
+//        Stream<Double> grades = studentsGrades.stream().map(g -> g.)
+//    }
+
 }
