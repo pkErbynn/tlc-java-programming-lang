@@ -13,8 +13,9 @@ public class NaughtyStudent extends Student {
     public double getAverageGrade() {
         double avg = super.getAverageGrade() ;
         double hackedAvg = avg + (0.1*avg);
-        if(avg > 100.0){
-            return avg;     // meaning 10% mark can not be added
+        // meaning 10% mark can not be added
+        if(hackedAvg > 100.0){
+            return avg;
         }
         return hackedAvg;
     }

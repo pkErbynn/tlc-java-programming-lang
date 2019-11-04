@@ -13,20 +13,20 @@ public class Register {
         this.nameables = nameables;
     }
 
-//    public List<String> getRegisterByName(){
-//        List<String> names = new ArrayList<>();
-//        for (Nameable name :
-//                nameables) {
-//            names.add(name.getName());
-//        }
-//        return names;
-//    }
-
-
-    public List<String> getRegisterByName() {
-        List<String> names = nameables.stream().map(nameable -> nameable.getName()).collect(Collectors.toList());
+    public List<String> getRegisterByName(){
+        List<String> names = new ArrayList<>();
+        for (Nameable name :
+                nameables) {
+            names.add(name.getName());
+        }
         return names;
     }
+
+
+//    public List<String> getRegisterByName() {
+//        List<String> names = nameables.stream().map(nameable -> nameable.getName()).collect(Collectors.toList());
+//        return names;
+//    }
 
 //    public List<String> getRegisterByLevel(Level level){
 //        List<String> stuLevel = new ArrayList<>();

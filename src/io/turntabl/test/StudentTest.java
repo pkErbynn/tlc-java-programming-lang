@@ -38,4 +38,18 @@ class StudentTest {
         assertEquals(60.0, actual);
     }
 
+    @Test
+    void getnametest() {
+        Student erbynn = new Student("erbynn", Level.SECOND, Arrays.asList(50.0, 60.0, 70.0));
+        String actual = erbynn.getName();
+        assertEquals("erbynn", actual);
+    }
+
+@Test
+    void getLevelTest() {
+        Student erbynn = new Student("erbynn", Level.SECOND, Arrays.asList(50.0, 60.0, 70.0));
+        Level actual = erbynn.getLevel();
+        assertNotEquals(Level.FIRST, actual);
+    }
+
 }
