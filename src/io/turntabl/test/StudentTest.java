@@ -48,8 +48,7 @@ class StudentTest {
 @Test
     void getLevelTest() {
         Student erbynn = new Student("erbynn", Level.SECOND, Arrays.asList(50.0, 60.0, 70.0));
-        Level actual = erbynn.getLevel();
-        assertNotEquals(Level.FIRST, actual);
+        assertNotEquals(Level.FIRST, erbynn.getLevel());
     }
 
 }
