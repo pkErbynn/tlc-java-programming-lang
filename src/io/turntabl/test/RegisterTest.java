@@ -56,24 +56,19 @@ class RegisterTest {
 
     @Test
     void getRegisterByLevel() {
-        Register rg = new Register(Arrays.asList(
-                new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
-                new Student("john", Level.SECOND, Arrays.asList(50.0, 60.0, 70.0)),
-                new Student("kwesi", Level.THIRD, Arrays.asList(50.0, 60.0, 70.0)),
-                new Student("bin", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))
-        ));
-        Map<Level, List<Student>> levelStudents = new HashMap<>();
-
         List<Student> students =  Arrays.asList(
                 new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
                 new Student("john", Level.SECOND, Arrays.asList(50.0, 60.0, 70.0)),
                 new Student("kwesi", Level.THIRD, Arrays.asList(50.0, 60.0, 70.0))
         );
+        Register rg = new Register(students);
+        Map<Level, List<Student>> levelStudents = new HashMap<>();
+
         levelStudents.put(Level.FIRST, students);
         System.out.println(levelStudents);
-        assertEquals(Arrays.asList("erbynn", "bin"), rg.getRegisterByLevel2(Level.FIRST));
+        assertEquals(levelStudents.get(Level.FIRST), rg.getRegisterByLevel2(Level.FIRST));
     }
-
+//
     @Test
     void printReport() {
     }
