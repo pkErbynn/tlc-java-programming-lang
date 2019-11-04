@@ -1,9 +1,6 @@
 package io.turntabl;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Register {
@@ -13,6 +10,7 @@ public class Register {
         this.nameables = nameables;
     }
 
+    // using for-each loop
     public List<String> getRegisterByName(){
         List<String> names = new ArrayList<>();
         for (Nameable name :
@@ -22,28 +20,40 @@ public class Register {
         return names;
     }
 
-
+//    using fxnal programming
 //    public List<String> getRegisterByName() {
 //        List<String> names = nameables.stream().map(nameable -> nameable.getName()).collect(Collectors.toList());
 //        return names;
 //    }
 
+
+    // using for-each loop
 //    public List<String> getRegisterByLevel(Level level){
 //        List<String> stuLevel = new ArrayList<>();
 //        for (Nameable nameable :
 //                nameables) {
-//            if(nameable.getLevel()==level){
-//                stuLevel.add(nameable.getLevel().name());
+//            if(nameable.getLevel().equals(level)){      // NB!
+//                stuLevel.add(nameable.getName());
 //            }
 //        }
 //        return stuLevel;
 //    }
 
-
-    public List<String> getRegisterByLevel(Level level){
-        List<String> names = nameables.stream().filter(n -> n.getLevel() == Level.FIRST).map(n -> n.getName()).collect(Collectors.toList());
-        return names;
+    public Map<Level, List<Student>> getRegisterByLevel2(Level level){
+        Map<Level, List<Student>> levelNames = new HashMap<>();
+        List<Student> students = nameables
+                .stream()
+                .filter(n -> n.getLevel().equals(level))
+                .collect(Collectors.toList());
+        levelNames.put(level, students);
+        return levelNames;
     }
+
+//     using fxnal programming
+//    public List<String> getRegisterByLevel(Level level){
+//        List<String> names = nameables.stream().filter(n -> n.getLevel() == Level.FIRST).map(n -> n.getName()).collect(Collectors.toList());
+//        return names;
+//    }
 
 
 

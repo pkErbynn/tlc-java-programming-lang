@@ -7,6 +7,9 @@ import io.turntabl.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,10 +18,10 @@ class RegisterTest {
     @Test
     void getRegisterByName_optional() {
         Register rg = new Register(Arrays.asList(
-            new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
-            new Student("john", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
-            new Student("kwesi", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
-            new Student("bin", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))
+                new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
+                new Student("john", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
+                new Student("kwesi", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
+                new Student("bin", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))
         ));
         assertEquals(Arrays.asList("erbynn", "john", "kwesi", "bin"), rg.getRegisterByName());
     }
@@ -26,7 +29,7 @@ class RegisterTest {
     @Test
     void getRegisterByName_singleName() {
         Register rg = new Register(Arrays.asList(
-            new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))));
+                new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))));
         assertEquals(Arrays.asList("erbynn"), rg.getRegisterByName());
     }
 
@@ -40,6 +43,17 @@ class RegisterTest {
         assertEquals(Arrays.asList("erbynn", "john", "kwesi", "bin"), rg.getRegisterByName());
     }
 
+//    @Test
+//    void getRegisterByLevel() {
+//        Register rg = new Register(Arrays.asList(
+//                new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
+//                new Student("john", Level.SECOND, Arrays.asList(50.0, 60.0, 70.0)),
+//                new Student("kwesi", Level.THIRD, Arrays.asList(50.0, 60.0, 70.0)),
+//                new Student("bin", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))
+//        ));
+//        assertEquals(Arrays.asList("erbynn", "bin") , rg.getRegisterByLevel(Level.FIRST));
+//    }
+
     @Test
     void getRegisterByLevel() {
         Register rg = new Register(Arrays.asList(
@@ -48,7 +62,16 @@ class RegisterTest {
                 new Student("kwesi", Level.THIRD, Arrays.asList(50.0, 60.0, 70.0)),
                 new Student("bin", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))
         ));
-        assertEquals(Arrays.asList("erbynn", "bin") , rg.getRegisterByLevel(Level.FIRST));
+        Map<Level, List<Student>> levelStudents = new HashMap<>();
+
+        List<Student> students =  Arrays.asList(
+                new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
+                new Student("john", Level.SECOND, Arrays.asList(50.0, 60.0, 70.0)),
+                new Student("kwesi", Level.THIRD, Arrays.asList(50.0, 60.0, 70.0))
+        );
+        levelStudents.put(Level.FIRST, students);
+        System.out.println(levelStudents);
+        assertEquals(Arrays.asList("erbynn", "bin"), rg.getRegisterByLevel2(Level.FIRST));
     }
 
     @Test

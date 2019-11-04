@@ -9,7 +9,16 @@ public class Student implements Nameable, HasLevel{
     private Level studentLevel;
     private List<Double> studentsGrades;
 
-    public Student( String name,  Level studentLevel, List<Double> studentsGrades) {
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", studentLevel=" + studentLevel +
+                ", studentsGrades=" + studentsGrades +
+                '}';
+    }
+
+    public Student(String name, Level studentLevel, List<Double> studentsGrades) {
         this.name = name;
         this.studentLevel = studentLevel;
         this.studentsGrades = studentsGrades;
