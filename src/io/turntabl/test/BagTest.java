@@ -16,7 +16,7 @@ class BagTest {
     void add() {
         Bag<Student> studentBag = new Bag<>();
         Student student = new Student(
-                "erbyn",
+                "erbynn",
                 Level.FOURTH,
                 Arrays.asList(80.0, 70.6)
         );
@@ -28,7 +28,7 @@ class BagTest {
     void remove() {
         Bag<Student> studentBag = new Bag<>();
         Student student = new Student(
-                "erbyn",
+                "erbynn",
                 Level.FOURTH,
                 Arrays.asList(80.0, 70.6)
         );
@@ -41,7 +41,7 @@ class BagTest {
     void clear() {
         Bag<Student> studentBag = new Bag<>();
         Student student = new Student(
-                "erbyn",
+                "erbynn",
                 Level.FOURTH,
                 Arrays.asList(80.0, 70.6)
         );
