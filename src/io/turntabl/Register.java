@@ -63,7 +63,7 @@ public class Register {
         return levelNames;
     }
 
-    public String PrintReport() {
+/*    public String PrintReport() {
         if (this.nameables.size() == 1) {
             return this.nameables.get(0).getName();
         }
@@ -71,14 +71,16 @@ public class Register {
                 .sorted(Comparator.comparing(Nameable::getLevel))
                 .reduce("", (partialResult, nameable) -> partialResult + nameable.getName() + ", ", String::concat);
 
+    }*/
+
+
+/*
+    public Optional<Student> getStudentByName(String name){
+        Optional<Student> studentOptional = Optional.of("erbynn");
+        if(studentOptional.isEmpty()){
+            return Optional.of(Register::getStudentByName);
+        }
     }
-
-
-//    public Optional<Student> getStudentByName(String name){
-//        Optional<Student> studentOptional = Optional.empty();
-//        if(studentOptional.isEmpty()){
-////            return Optional.of(getRegisterByName("go"));
-//        }
-//    }
+*/
 
 }
