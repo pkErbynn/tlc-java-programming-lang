@@ -1,3 +1,4 @@
+
 package io.turntabl.test;
 
 import io.turntabl.Lecture;
@@ -5,7 +6,6 @@ import io.turntabl.Level;
 import io.turntabl.Student;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,7 +19,8 @@ class LectureTest {
 //
 //    }
 
-    @Test
+
+@Test
     void getHighestAverageGrade() {
         List<Student> students = Arrays.asList(
                 new Student("hot", Level.FIRST, Arrays.asList(3.0, 4.0, 5.0)),

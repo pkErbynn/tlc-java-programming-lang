@@ -1,7 +1,6 @@
 package io.turntabl.test;
 
 import io.turntabl.Level;
-import io.turntabl.Nameable;
 import io.turntabl.Register;
 import io.turntabl.Student;
 import org.junit.jupiter.api.Test;
@@ -11,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RegisterTest {
 
@@ -68,7 +67,7 @@ class RegisterTest {
         System.out.println(levelStudents);
         assertEquals(levelStudents.get(Level.FIRST), rg.getRegisterByLevel2(Level.FIRST));
     }
-//
+
     @Test
     void printReport() {
     }

@@ -18,4 +18,8 @@ public class Bag<T> {
         this.bagList.clear();
     }
 
+    public int size() {
+        return bagList.size();
+    }
+
 }
