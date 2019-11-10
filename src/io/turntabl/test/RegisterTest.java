@@ -1,9 +1,6 @@
 package io.turntabl.test;
 
-import io.turntabl.Level;
-import io.turntabl.NameOrderer;
-import io.turntabl.Register;
-import io.turntabl.Student;
+import io.turntabl.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -21,16 +18,17 @@ class RegisterTest {
                 new Student("kwesi", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
                 new Student("bin", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))
         ));
-        assertEquals(Arrays.asList("erbynn", "john", "kwesi", "bin"), rg.getRegisterByName());
+        assertEquals(Arrays.asList("erbynn", "john", "kwesi", "bin"), rg.getRegisterByName_withStreams());
     }
 
     @Test
     void getRegisterByName_singleName() {
         Register rg = new Register(Arrays.asList(
                 new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))));
-        assertEquals(Arrays.asList("erbynn"), rg.getRegisterByName());
+        assertEquals(Arrays.asList("erbynn"), rg.getRegisterByName_withStreams());
     }
 
+    @Test
     void getRegisterByName() {
         Register rg = new Register(Arrays.asList(
                 new Student("erbynn", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
@@ -38,7 +36,7 @@ class RegisterTest {
                 new Student("kwesi", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0)),
                 new Student("bin", Level.FIRST, Arrays.asList(50.0, 60.0, 70.0))
         ));
-        assertEquals(Arrays.asList("erbynn", "john", "kwesi", "bin"), rg.getRegisterByName());
+        assertEquals(Arrays.asList("erbynn", "john", "kwesi", "bin"), rg.getRegisterByName_withStreams());
     }
 
 //    @Test
@@ -109,6 +107,17 @@ class RegisterTest {
                 students) {
             System.out.println(stu.getName());
         }
+    }
+
+    @Test
+    public void getStudentByName_withExceptionTest() throws StudentNotFoundException {
+        Student ampadu = new Student("erbynn", Level.FOURTH, Arrays.asList(20.0, 30.0, 40.0));
+        Register register = new Register(Arrays.asList(
+                new Student("raph", Level.SECOND, Arrays.asList(80.5, 90.0)),
+                new Student("Margaret", Level.FOURTH, Arrays.asList(90.5, 95.8)),
+                new Student("Anthoy", Level.FIRST, Arrays.asList(70.0, 99.8))
+        ));
+        assertThrows(StudentNotFoundException.class, () -> register.getStudentByName_withException(ampadu));
     }
 
 
